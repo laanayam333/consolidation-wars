@@ -11,10 +11,8 @@ const fetcher = async () => {
 export default function MicrosoftStats() {
   const { data, error } = useSWR('token', fetcher);
 
-  if (error) return 'An error occured.';
-  if (!data) return 'Loading...';
-
-  console.log(data);
+  if (error) return <div>An error occured.</div>;
+  if (!data) return <div>Loading...</div>;
 
   const filteredData = data.filter((coin: any) => coin.id === 'gaming');
 

@@ -1,6 +1,6 @@
 //! IMPORTS
 //* dependencies
-import { Suspense, useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
@@ -62,11 +62,9 @@ const HomePage: NextPage = () => {
             Dashboard
           </h3>
 
-          {/* <Suspense fallback={<Loading />}>
-            <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-              <MicrosoftStats />
-            </div>
-          </Suspense> */}
+          <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+            <MicrosoftStats />
+          </div>
         </div>
 
         <div className="mx-auto h-[576px] w-[720px]">
