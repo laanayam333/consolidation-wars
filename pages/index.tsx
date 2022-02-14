@@ -1,6 +1,6 @@
 //! IMPORTS
 //* dependencies
-import { useState, ChangeEvent } from 'react';
+import { Suspense, useState, ChangeEvent } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
@@ -10,6 +10,8 @@ import { marketCapData } from '@/data/index';
 
 //* components
 import LineChart from '@/components/Charts/LineChart';
+import MicrosoftStats from '@/components/Dashboard/MicrosoftStats';
+import Loading from '@/components/Shared/Loading';
 
 //* constants
 const companies = marketCapData.map((elm) => elm.company);
@@ -54,6 +56,18 @@ const HomePage: NextPage = () => {
             </div>
           ))}
         </ul>
+
+        <div className="p-8">
+          <h3 className="text-lg font-medium leading-6 text-gray-900">
+            Dashboard
+          </h3>
+
+          {/* <Suspense fallback={<Loading />}>
+            <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+              <MicrosoftStats />
+            </div>
+          </Suspense> */}
+        </div>
 
         <div className="mx-auto h-[576px] w-[720px]">
           <ParentSize>

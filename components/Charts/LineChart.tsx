@@ -10,7 +10,6 @@ import { TooltipWithBounds, useTooltip, defaultStyles } from '@visx/tooltip';
 import { localPoint } from '@visx/event';
 import { GlyphCircle } from '@visx/glyph';
 import { curveMonotoneX } from '@visx/curve';
-import { type } from 'os';
 
 interface IData {
   company: string;
@@ -199,8 +198,8 @@ export default function LineChart({ data, width, height }: IProps) {
             </g>
           )}
 
-          {/* {tooltipData &&
-            tooltipData.map((d: IData, i: number) => (
+          {tooltipData &&
+            tooltipData.map((d, i) => (
               <g key={i}>
                 <GlyphCircle
                   left={tooltipLeft - margin.left}
@@ -211,7 +210,7 @@ export default function LineChart({ data, width, height }: IProps) {
                   strokeWidth={2}
                 />
               </g>
-            ))} */}
+            ))}
 
           <rect
             x={0}
